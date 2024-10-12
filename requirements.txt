@@ -1,0 +1,4 @@
+Flask==3.0.3
+langchain_community==0.3.2
+nltk==3.8.1
+Werkzeug==3.0.4
