@@ -4,8 +4,8 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 import heapq
 import nltk
 
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk_data_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
+nltk.data.path.append(nltk_data_path)
 
 def summarize_pdf(file_path):
     # Load PDF using PyMuPDFLoader
