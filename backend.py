@@ -1,11 +1,17 @@
 from langchain_community.document_loaders import PyMuPDFLoader
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import sent_tokenize
 import heapq
 import nltk
 
-nltk.download("punkt")
-nltk.download("stopwords")
+
+nltk_data_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
+nltk.data.path.append(nltk_data_path)
+
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+stop_words = set(stopwords.words('english'))
+tokens = word_tokenize("This is a sample sentence")
 
 def summarize_pdf(file_path):
     # Load PDF using PyMuPDFLoader
