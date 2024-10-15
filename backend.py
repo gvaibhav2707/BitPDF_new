@@ -2,6 +2,7 @@ from langchain_community.document_loaders import PyMuPDFLoader
 from nltk.tokenize import sent_tokenize
 import heapq
 import nltk
+import os
 
 
 nltk_data_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
