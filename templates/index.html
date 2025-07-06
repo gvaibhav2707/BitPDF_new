@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitPDF: PDF Summarizer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BitPDF - PDF Summarizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bitpdf.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">BitPDF: PDF Summarizer</h1>
-        <div class="translate-box">
-            <div class="upload-section">
-                <h2>Upload PDF</h2>
-                <form method="POST" action="/upload" enctype="multipart/form-data">
-                    <input type="file" name="file" accept="application/pdf" required>
-                    <button type="submit" class="btn">Summarize PDF</button>
-                </form>
-            </div>
-            <div class="output-section">
-                <h2>Summary Output</h2>
-                <p class="instructions">After uploading, the summarized text will be available for download.</p>
-            </div>
-        </div>
+
+  <div class="bitpdf-container">
+    <h1 class="bitpdf-title"><i class='bx bx-file'></i> BitPDF - PDF Summarizer</h1>
+
+    <div class="bitpdf-card">
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <label for="file-upload" class="upload-label">
+          <i class='bx bx-upload'></i> Upload PDF File
+        </label>
+        <input type="file" id="file-upload" name="file" accept="application/pdf" required>
+        <button type="submit" class="btn">Summarize Now</button>
+      </form>
     </div>
+
+    <div class="bitpdf-summary">
+      <h2><i class='bx bx-message-dots'></i> Summary Output</h2>
+      <p class="summary-note">Once uploaded, the summary will be shown here and can be downloaded.</p>
+    </div>
+  </div>
+
 </body>
 </html>
